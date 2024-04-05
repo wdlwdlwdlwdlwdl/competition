@@ -1,0 +1,144 @@
+
+.white {
+    height: 100vh;
+    z-index: -111; /* 设置背景动画容器的层级 */
+}
+.white:before {
+    /*z-index: 1000;*/
+    z-index: -111; /* 设置背景动画容器的层级 */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60vh;
+    background-image: linear-gradient(-180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+.white:after {
+    /*z-index: 1000;*/
+    z-index: -111; /* 设置背景动画容器的层级 */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20vh;
+    background-image: linear-gradient(0deg, #ebebeb 0%, rgba(235, 235, 235, 0) 100%);
+}
+
+.Rsquares {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%; /* 设置容器宽度为页面宽度的四分之一 */
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.Rsquare {
+    -webkit-animation: squares 9.5s linear infinite;
+    animation: squares 9.5s linear infinite;
+    align-self: flex-end;
+    width: 1em;
+    height: 1em;
+    transform: translateY(100%);
+    background: #ebebeb;
+}
+.Rsquare:nth-child(2) {
+    height: 1.5em;
+    width: 3em;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-duration: 17s;
+    animation-duration: 17s;
+    -webkit-filter: blur(5px);
+}
+.Rsquare:nth-child(3) {
+    height: 2em;
+    width: 1em;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+    -webkit-animation-duration: 8s;
+    animation-duration: 8s;
+    -webkit-filter: blur();
+}
+.Rsquare:nth-child(4) {
+    height: 1em;
+    width: 1.5em;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+    -webkit-filter: blur(3px);
+    -webkit-animation-duration: 13s;
+    animation-duration: 13s;
+}
+.Rsquare:nth-child(5) {
+    height: 1.25em;
+    width: 2em;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+    -webkit-filter: blur(2px);
+    -webkit-animation-duration: 11s;
+    animation-duration: 11s;
+}
+.Rsquare:nth-child(6) {
+    height: 2.5em;
+    width: 2em;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-filter: blur(1px);
+    -webkit-animation-duration: 9s;
+    animation-duration: 9s;
+}
+.Rsquare:nth-child(7) {
+    height: 5em;
+    width: 2em;
+    -webkit-filter: blur(2.5px);
+    -webkit-animation-duration: 12s;
+    animation-duration: 12s;
+}
+.Rsquare:nth-child(8) {
+    height: 1em;
+    width: 3em;
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+    -webkit-filter: blur(6px);
+    -webkit-animation-duration: 18s;
+    animation-duration: 18s;
+}
+.Rsquare:nth-child(9) {
+    height: 1.5em;
+    width: 2em;
+    -webkit-filter: blur(0.5px);
+    -webkit-animation-duration: 9s;
+    animation-duration: 9s;
+}
+.Rsquare:nth-child(9) {
+    height: 3em;
+    width: 2.4em;
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
+    -webkit-filter: blur(0.5px);
+    -webkit-animation-duration: 12s;
+    animation-duration: 12s;
+}
+
+@-webkit-keyframes Rsquares {
+    from {
+        transform: translateY(100%) rotate(-50deg);
+    }
+    to {
+        transform: translateY(calc(-100vh + -100%)) rotate(20deg);
+    }
+}
+
+@keyframes Rsquares {
+    from {
+        transform: translateY(100%) rotate(-50deg);
+    }
+    to {
+        transform: translateY(calc(-100vh + -100%)) rotate(20deg);
+    }
+}
+

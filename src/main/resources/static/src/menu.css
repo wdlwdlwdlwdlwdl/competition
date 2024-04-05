@@ -1,0 +1,205 @@
+/*下拉列表*/
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.select_box {
+    width: 200px;
+    height: 36px;
+    border: 1px solid #3CF;
+    position: relative;
+    float: left;
+    margin-right: 50px;
+}
+
+.select_box span {
+    display: inline-block;
+    width: 200px;
+    height: 36px;
+    line-height: 36px;
+    cursor: pointer;
+    text-indent: 10px;
+}
+
+.select_box .span_aa {
+    color: #C36;
+}
+
+.select_box ul {
+    width: 200px;
+    position: absolute;
+    top: 36px;
+    left: -1px;
+    border: 1px solid #3CF;
+    display: none;
+    background: #fff;
+}
+
+.select_box li {
+    cursor: pointer;
+    line-height: 36px;
+    text-indent: 10px;
+}
+
+.select_box li:hover {
+    background: #39F;
+    color: #fff;
+}
+
+.select_box font {
+    position: absolute;
+    right: 10px;
+    font-size: 26px;
+    font-family: "微软雅黑";
+    color: #3CF;
+    transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*按钮*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600&display=swap");
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+span {
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+}
+span a {
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform 0.25s;
+    font-family: "Montserrat", sans-serif;
+}
+span a:before,
+span a:after {
+    position: absolute;
+    /*content: "BUTTON";*/
+    content: "Run";
+    height: 55px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+/*span a:before {*/
+/*  color: #fff;*/
+/*  background: #000;*/
+/*  transform: rotateY(0deg) translateZ(25px);*/
+/*}*/
+/*span a:after {*/
+/*  color: #000;*/
+/*  transform: rotateX(90deg) translateZ(25px);*/
+/*}*/
+
+
+span a:before {
+    color: #000000;
+    background: #fff;
+    transform: rotateY(0deg) translateZ(25px);
+}
+span a:after {
+    color: #fff;
+    background: #000000;
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+
+span a:hover {
+    transform: translateZ(-25px) rotateX(-90deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{margin:0;padding:0;list-style-type:none;}
+
+#nav-1 .nav {
+    position: relative;
+    border: none;
+    border-radius: 10em;
+    display: flex;
+    list-style: none;
+    background: #f5f5f5;
+    /*box-shadow: 20px 40px 50px #00000044;*/
+    padding: 10px;
+}
+#nav-1 .nav li {
+    margin: 0px;
+}
+#nav-1 .nav li a {
+    position: relative;
+    padding: 0.6em 2em;
+    font-size: 18px;
+    border: none;
+    color: #333;
+    display: inline-block;
+    text-decoration: none;
+    z-index: 3;
+}
+#nav-1 .slide1,
+#nav-1 .slide2 {
+    position: absolute;
+    display: inline-block;
+    height: 3em;
+    border-radius: 10em;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1.05);
+}
+#nav-1 .nav .slide1 {
+    background-color: yellowgreen;
+    z-index: 2;
+}
+#nav-1 .nav .slide2 {
+    opacity: 0;
+    background: #fff;
+    border: 1px solid #8ab9ff;
+    z-index: 1;
+}
+
+.squeeze {
+    transition: all 1.5s;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}

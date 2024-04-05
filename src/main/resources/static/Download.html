@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DLpTCR Server</title>
+  <link href="/src/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/src/Lbackground.css">
+  <link rel="stylesheet" href="/src/Rbackground.css">
+
+  <style>
+    html{height: 100%}
+    body{margin: 0;
+      height: 100%;
+      background: #fff;}
+
+    canvas{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+
+    .body_content{
+      width: 900px;
+      height: 100%;
+      position: absolute;
+      background-color: white;
+      left: 35%;
+      margin-left: -200px;
+      top: 35%;
+      margin-top: -200px;
+    }
+    .box { float: left; padding: 35px 0 0; width: 650px; color: black; }
+    .info {
+      border: 1px solid #e0e0e0;
+      background: #f4f4f4;
+      padding: 20px;
+      width: 864px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      position: relative;
+      clear: both;
+    }
+    .col{
+      width: 290px;
+      padding: 5px;
+      #border: 1px solid #e0e0e0;
+      background: white;
+    }
+    /* @group info */
+
+    div.info {
+      border: 1px solid #e0e0e0;
+      background: #f4f4f4;
+      padding: 20px;
+      width: 864px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      position: relative;
+      clear: both;
+    }
+    .info .right { float: right; margin: 0 55px 0 0;}
+
+    .info .main {
+      font-weight: bold;
+      font-style: italic;
+      font-size: 120%;
+    }
+    .info a{
+      font-style: italic;
+      color: blue;
+      font-weight: bold;
+      font-size: 105%;
+      text-decoration: none;
+      font-variant: normal;
+    }
+    .info a:hover {
+      text-shadow: silver 1px 1px 1px;
+      color: blue;
+    }
+
+    .file {
+      position: relative;
+      display: inline-block;
+      background: #FFFFCC;
+      border: 1px solid #CCCCCC;
+      border-radius: 4px;
+      padding: 4px 12px;
+      overflow: hidden;
+      color: #003333;
+      text-decoration: none;
+      text-indent: 0;
+      line-height: 20px;
+    }
+    .file input {
+      position: absolute;
+      font-size: 100px;
+      right: 0;
+      top: 0;
+      opacity: 0;
+    }
+    .file:hover {
+      background: blanchedalmond;
+      color: #b3b2b2;
+      text-decoration: none;
+    }
+
+    .col1{
+      position:absolute;
+      top:550px;
+      padding: 1px 1px 1px;
+      width: 900px;
+      border-radius: 4px;
+      border: 1px solid #e0e0e0;
+      background: #e0e0e0;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+
+<!--动态背景（左）-->
+<div class='squares'>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+</div>
+
+<!--动态背景（右）-->
+<div class='Rsquares'>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+</div>
+
+
+<div class="body_content">
+
+  <div id="header">
+    <h1><a class="red" href="index.html">DLpTCR Server</a></h1>
+    <ul id="menu">
+      <li><a href="index.html" title="DLpTCR Server">首页</a></li>
+      <li ><a href="Home.html" title="Home">Home</a></li>
+      <li><a href="Server.html" title="DLpTCR Server">Web Server</a></li>
+      <li class="active"><a href="Download.html" title="Download">Download</a></li>
+      <li><a href="Example.html" title="Example">Example</a></li>
+
+      <li><a href="Citation.html" title="Citation">Citation</a></li>
+      <!--<li><a href="./tutorial" title="Tutorial">Tutorial</a></li>-->
+    </ul>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <div class="info">
+    <h3 class="underlined" align="left">DLpTCR Server Download</h3>
+    <br>
+    <tr>
+      <td>
+
+        <p>
+          <font size="4" face="Times New Roman, Times, serif">
+            <strong>
+              &nbsp;&nbsp;&nbsp;&nbsp;To construct high-quality benchmark datasets,
+              all the TCR-pMHC pairs used in this study were mainly collected from
+              the databases VDJdb and IEDB as well as TetTCR-seq data.
+            </strong>
+          </font>
+        </p>
+
+
+        <p>
+          <font size="4" face="Times New Roman, Times, serif">
+            <strong>Training Dataset :</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3α:
+            <a href="/static/download/TCRA_train.csv">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3β:
+            <a href="/static/download/TCRB_train.csv">Download File</a>
+          </font>
+        </p>
+
+
+        <p>
+          <font size="4" face="Times New Roman, Times, serif">
+            <strong>Testing Dataset :</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3α:
+            <a href="/static/download/TCRA_test.csv">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3β:
+            <a href="/static/download/TCRB_test.csv">Download File</a>
+          </font>
+        </p>
+
+        <p>
+          <font size="4" face="Times New Roman, Times, serif">
+            <strong>Independent Testing Dataset I (COVID-19 dataset) :</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3α:
+            <a href="/static/download/TCRA_COVID-19.csv">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3β:
+            <a href="/static/download/TCRB_COVID-19.csv">Download File</a>
+          </font>
+        </p>
+
+
+        <p>
+          <font size="4" face="Times New Roman, Times, serif">
+            <strong>Independent Testing Dataset II (IEDB dataset) :</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3αβ:
+            <a href="/static/download/TCRAB_IEDB.csv">Download File</a>.
+          </font>
+        </p>
+        <p>
+          <font size="4" face="Times New Roman, Times, serif">
+            <strong>Independent Testing Dataset III (using for performance comparison) :</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;McPAS-shared:
+            <a href="/static/download/McPAS-shared.csv">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;McPAS-unique:
+            <a href="/static/download/McPAS-unique.csv">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;COVID-19:
+            <a href="/static/download/COVID-19.csv">Download File</a>
+          </font>
+        </p>
+        <br>
+
+        <p>
+          <font size="4" face="Times New Roman, Times, serif">
+            <strong>
+              &nbsp;&nbsp;&nbsp;&nbsp;A remainder of peptide-TCR pairs in VDJdb were filtered out during benchmark dataset
+              construction to assess the prediction ability of ensemble classifiers for TCR cross-reactivity.
+            </strong>
+          </font>
+        </p>
+
+
+        <p >
+          <font size="4" face="Times New Roman, Times, serif" >
+            <strong>Cross-reactivity Dataset :</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3α:
+            <a href="/static/download/TRA_VDJdb_TCR_cross-reactivity.rar">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3β:
+            <a href="/static/download/TRB_VDJdb_TCR_cross-reactivity.rar">Download File</a>
+          </font>
+        </p>
+
+        <br>
+
+        <p>
+          <font size="4" face="Times New Roman, Times, serif" color="#a52a2a">
+            <strong>
+              Supplementary Data ：
+            </strong>
+          </font>
+        </p>
+
+
+        <p>
+          <font size="4" face="Times New Roman, Times, serif">
+            &nbsp;&nbsp;&nbsp;&nbsp;<em title="One-hot encoding approach.">Supplementary Data 1:</em>
+            <a href="/static/download/Supplementary%20Data%201.xlsx">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<em title="Original values of twenty physicochemical properties of the corresponding amino acid.">Supplementary Data 2:</em>
+            <a href="/static/download/Supplementary%20Data%202.xlsx">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<em title="The detailed architectures of the proposed models.">Supplementary Data 3:</em>
+            <a href="/static/download/Supplementary%20Data%203.xlsx">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<em title="The five-fold cross-validation results of models trained using different feature extraction methods.">Supplementary Data 4:</em>
+            <a href="/static/download/Supplementary%20Data%204.xlsx">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<em title="The testing performance of two types of ensemble deep learning models based on testing dataset and independent COVID-19 data for predicting the peptide-CDR3α(β) interaction.">Supplementary Data 5:</em>
+            <a href="/static/download/Supplementary%20Data%205.xlsx">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<em title="Comparison of the performance on different classifiers for predicting the peptide-TCR interaction.">Supplementary Data 6:</em>
+            <a href="/static/download/Supplementary%20Data%206.xlsx">Download File</a>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<em title="Predictive performance comparison between our predictor and the existing predictors on three independent testing data.">Supplementary Data 7:</em>
+            <a href="/static/download/Supplementary%20Data%207.xlsx">Download File</a>
+
+          </font>
+        </p>
+        <br>
+        <p>
+          <font size="4" face="Times New Roman, Times, serif" color="#a52a2a">
+            <strong>
+              Source Code ：
+            </strong>
+          </font>
+        </p>
+        <p >
+          <font size="4" face="Times New Roman, Times, serif" >
+            <strong>Hosted on </strong>
+            <a href="https://github.com/jiangBiolab/DLpTCR">GitHub</a>
+
+          </font>
+        </p>
+
+      </td>
+    </tr>
+
+
+
+
+  </div>
+
+
+  <div id="footer">
+
+    <p align="center">Jiang Lab:Bioinformatic Team (<a href="http://www.jianglab.org.cn/">Jiang Lab</a>)
+      ----------------------------------------------------Contact: qhjiang@hit.edu.cn</p>
+    <p align="center"><a href="http://www.beian.miit.gov.cn/">赣ICP备20010039号</a></p>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<canvas id="canvas"></canvas>
+<script src="/src/index.js"></script>
+
+</body>
+</html>
