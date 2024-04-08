@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Model Test</title>
+    <title>ImmunoFlash Sever</title>
 
     <link rel="stylesheet" href="/src/menu.css" />
     <link href="/src/server.css" rel="stylesheet" type="text/css">
@@ -18,6 +18,17 @@
         {
             position:absolute;
         }
+
+
+        .gif{
+            position: absolute;
+            left: 0.5%;
+            z-index: 1;
+            top: 35%;
+            background-color: transparent; /* 设置图像背景为透明 */
+        }
+
+
     </style>
 
 
@@ -25,6 +36,25 @@
 
 
 <body>
+
+<div class="gif">
+    <img alt="Walking Totoro"
+         src="/images/mygif.gif"
+         height="154"
+         width="340"
+    />
+</div>
+
+<!--地球仪-->
+<!--<div class = "GPS_box">-->
+<!--    <script-->
+<!--            type="text/javascript"-->
+<!--            src="//rf.revolvermaps.com/0/0/2.js?i=55iiomp3udu&amp;m=8&amp;s=130&amp;c=ff0000&amp;t=1"-->
+<!--            async="async">-->
+
+<!--    </script>-->
+<!--</div>-->
+
 
 <!--原来的背景-->
 <canvas id="canvas"></canvas>
@@ -122,16 +152,17 @@
 
 
                 <br><br/>
-                <b><label>&ensp;&ensp;Email:</label></b>
+                <b><label>&ensp;&ensp;Email(选填):</label></b>
                 <!--          先不写required,先进行测试-->
                 <!--        <input type = "text"  id="Email_address" name="Email_address"  size="25" placeholder= 'Please enter your email address' required>-->
-                <input type = "text"  id="Email_address" name="Email_address"  size="25" placeholder= 'Please enter your email address' required >
+                <input type = "text"  id="Email_address" name="Email_address"  size="25" placeholder= 'Please enter your email address'  >
                 <br><br/>
 
 
-                <label>&ensp;&ensp;
-                    <input type="checkbox" name="checkbox"> 是否需要热图
-                </label>
+
+<!--                <label>&ensp;&ensp;-->
+<!--                    <input type="checkbox" name="checkbox"> 是否需要热图-->
+<!--                </label>-->
 
 
             </div>
@@ -167,22 +198,33 @@
 
 <script>
 
-    // 监听按钮点击事件
+    // 监听按钮点击事件(邮箱可以不输入)
     $("#submitFormButton").on("click", function () {
 
-        // 检查表单的有效性
-        var isFormValid = $("form")[0].checkValidity();
-        if (!isFormValid) {
-            // 如果表单验证不通过，则显示提示信息
-            alert("Please fill in all the information completely.");
+        // 获取除了邮箱外的所有输入框
+        var inputs = $("form input[type='text']").not("#Email_address");
+        var isFormValid = true;
+
+        // 检查所有输入框是否为空
+        inputs.each(function () {
+            if (!$(this).val()) {
+                // 如果输入框为空，则将表单有效性设为false
+                isFormValid = false;
+                // 可以在此处针对具体输入框进行警告信息的设置
+                alert("Please fill in all the information completely.");
+                return false; // 结束循环
+            }
+        });
+
+        // 检查文件输入框是否选择了文件
+        var fileObj = document.getElementById("file").files[0];
+        if (!fileObj) {
+            // 如果文件输入框没有选择文件，则提示相关信息并终止函数执行
+            alert("Please select a file.");
             return;
         }
 
-
-
-
-        //文件上传逻辑
-        var fileObj = document.getElementById("file").files[0];//这边的file是输入框上传的文件数据
+        // 文件上传逻辑
         var form = new FormData();
         form.append("file", fileObj);
 
@@ -193,9 +235,7 @@
             data: form,
             processData: false,
             contentType: false,
-            success: function (data) {
-                // 处理成功，可以显示消息或执行其他操作
-                alert(data);
+            success: function () {
                 window.location.href = window.location.href;
             },
             error: function () {
@@ -204,13 +244,12 @@
             }
         });
 
-
-
-
-
         // 如果表单验证通过，则提交表单
-        $("form").submit();
+        if (isFormValid) {
+            $("form").submit();
+        }
     });
+
 
 
     // 在表单提交成功后，显示邮件发送结果
@@ -222,9 +261,9 @@
             type: "POST",
             url: "/submitFormTCRfile", // 提交到后端处理邮件发送的接口
             data: formData,
-            success: function (data) {
-                // 处理成功，显示邮件发送结果
-                alert(data);
+            success: function () {
+                // 处理成功，跳转到Result.html页面
+                window.location.href = "/Result.html";
             },
             error: function () {
                 // 处理错误

@@ -2,12 +2,21 @@
 <html lang="en" xmlns:text-align="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
-  <title>DLpTCR Server</title>
+  <title>ImmunoFlash Sever</title>
   <link href="/src/main.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/src/Lbackground.css">
   <link rel="stylesheet" href="/src/Rbackground.css">
 
   <style>
+    .gif{
+      position: absolute;
+      left: 0.5%;
+      /*z-index: 1;*/
+      top: 35%;
+      background-color: transparent; /* 设置图像背景为透明 */
+    }
+
+
     html{height: 100%}
     body{margin: 0;
       height: 100%;
@@ -126,6 +135,14 @@
 </head>
 <body>
 
+<div class="gif">
+  <img alt="Walking Totoro"
+       src="/images/mygif.gif"
+       height="154"
+       width="340"
+  />
+</div>
+
 
 <!--动态背景（左）-->
 <div class='squares'>
@@ -159,7 +176,7 @@
 <div class="body_content">
 
   <div id="header">
-    <h1><a class="red" href="index.html">DLpTCR Server</a></h1>
+    <h1><a class="red" href="index.html">ImmunoFlash Sever</a></h1>
     <ul id="menu">
       <li><a href="index.html" title="DLpTCR Server">首页</a></li>
       <li ><a href="Home.html" title="Home">Home</a></li>

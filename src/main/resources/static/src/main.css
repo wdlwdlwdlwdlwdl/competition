@@ -139,11 +139,26 @@ div.info {
 
 /* @end */
 
-#footer { clear: both; width: 800px;
-    padding: 15px; border-top: 1px solid #e0e0e0;
-    margin-right: auto; margin-left: auto; margin-top: 100px;}
-#footer .right { float: right; margin: 0 55px 0 0; }
-#footer a { color: #808080; font-weight: bold; }
+#footer {
+    clear: both;
+    width: 800px;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+}
+#footer .right {
+    float: right;
+    margin: 0 55px 0 0;
+}
+#footer a {
+    color: #808080;
+    font-weight: bold;
+}
+
+
+
 
 /* @group Capas ocultas */
 

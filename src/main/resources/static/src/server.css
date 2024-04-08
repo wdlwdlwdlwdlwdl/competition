@@ -69,16 +69,20 @@ canvas{
     height: 150px;
     position: absolute;
     left: 5%;
-
+    z-index: 6111;
     top: 35%;
 
 }
+
+
+/*footer*/
 .beian{
     position: absolute;
     left: 0%;
     top: 70%;
-
+    /*top: 100%;*/
 }
+
 
 .box { float: left; padding: 35px 0 0; width: 650px; color: #333; }
 .info {

@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DLpTCR Server</title>
+  <title>ImmunoFlash Sever</title>
   <link href="/src/main.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/src/Lbackground.css">
   <link rel="stylesheet" href="/src/Rbackground.css">
   <style>
+    .gif{
+      position: absolute;
+      left: 0.5%;
+      /*z-index: 1;*/
+      top: 35%;
+      background-color: transparent; /* 设置图像背景为透明 */
+    }
+
     html{height: 100%}
     body{margin: 0;
       height: 100%;
@@ -144,15 +152,24 @@
 </head>
 <body>
 
-<!--地球仪-->
-<div class = "GPS_box">
-  <script
-          type="text/javascript"
-          src="//rf.revolvermaps.com/0/0/2.js?i=55iiomp3udu&amp;m=8&amp;s=130&amp;c=ff0000&amp;t=1"
-          async="async">
-
-  </script>
+<div class="gif">
+  <img alt="Walking Totoro"
+       src="/images/mygif.gif"
+       height="154"
+       width="340"
+  />
 </div>
+
+
+<!--地球仪-->
+<!--<div class = "GPS_box">-->
+<!--  <script-->
+<!--          type="text/javascript"-->
+<!--          src="//rf.revolvermaps.com/0/0/2.js?i=55iiomp3udu&amp;m=8&amp;s=130&amp;c=ff0000&amp;t=1"-->
+<!--          async="async">-->
+
+<!--  </script>-->
+<!--</div>-->
 
 
 
@@ -189,7 +206,7 @@
 <div class="body_content">
 
   <div id="header">
-    <h1><a class="red" href="index.html">DLpTCR Server</a></h1>
+    <h1><a class="red" href="index.html">ImmunoFlash Sever</a></h1>
     <ul id="menu">
       <li class="active"><a href="index.html" title="DLpTCR Server">首页</a></li>
       <li><a href="Home.html" title="Home">Home</a></li>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Model Test</title>
+    <title>ImmunoFlash Sever</title>
 
     <link rel="stylesheet" href="/src/menu.css">
     <link href="/src/server.css" rel="stylesheet" type="text/css">
@@ -18,6 +18,17 @@
         {
             position:absolute;
         }
+
+
+        .gif{
+            position: absolute;
+            left: 0.5%;
+            /*z-index: 1;*/
+            top: 35%;
+            background-color: transparent; /* 设置图像背景为透明 */
+        }
+
+
     </style>
 
 
@@ -27,6 +38,23 @@
 
 <body>
 
+<div class="gif">
+    <img alt="Walking Totoro"
+         src="/images/mygif.gif"
+         height="154"
+         width="340"
+    />
+</div>
+
+<!--地球仪-->
+<!--<div class = "GPS_box">-->
+<!--    <script-->
+<!--            type="text/javascript"-->
+<!--            src="//rf.revolvermaps.com/0/0/2.js?i=55iiomp3udu&amp;m=8&amp;s=130&amp;c=ff0000&amp;t=1"-->
+<!--            async="async">-->
+
+<!--    </script>-->
+<!--</div>-->
 
 
 <!--动态背景（左）-->
@@ -134,16 +162,16 @@
                 <!--                <br><br/>-->
 
                 <br><br/>
-                <b><label>&ensp;&ensp;Email:</label></b>
+                <b><label>&ensp;&ensp;Email(选填):</label></b>
                 <!--          先不写required,先进行测试-->
                 <!--        <input type = "text"  id="Email_address" name="Email_address"  size="25" placeholder= 'Please enter your email address' required>-->
                 <input type = "text"  id="Email_address" name="Email_address"  size="25" placeholder= 'Please enter your email address' required >
                 <br><br/>
 
 
-                <label>&ensp;&ensp;
-                    <input type="checkbox" name="checkbox"> 是否需要热图
-                </label>
+<!--                <label>&ensp;&ensp;-->
+<!--                    <input type="checkbox" name="checkbox"> 是否需要热图-->
+<!--                </label>-->
 
 
             </div>
