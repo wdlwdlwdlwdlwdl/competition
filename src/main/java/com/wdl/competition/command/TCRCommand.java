@@ -36,7 +36,7 @@ public class TCRCommand {
 
 
 
-
+        //E:/anaconda/envs/pytorch/python.exe E:/FTP/web/data/test.py
 
         // 构建命令
         String command =  scriptPath;
@@ -54,7 +54,11 @@ public class TCRCommand {
     public void executeLinuxCommands() throws IOException, InterruptedException {
         // 执行 Linux 下的命令
         // 例如：source activate ycp
-        Process process1 = Runtime.getRuntime().exec("source activate ycp && python /data/ycp/fx/性能测试.py");
-        process1.waitFor();
+//        Process process1 = Runtime.getRuntime().exec("conda activate fx");
+//        process1.waitFor();
+
+
+        Process process2 = Runtime.getRuntime().exec("/ehs/miniconda3/envs/fx/bin/python /ehs/data/fx/web/性能测试_tcr.py");
+        process2.waitFor();
     }
 }

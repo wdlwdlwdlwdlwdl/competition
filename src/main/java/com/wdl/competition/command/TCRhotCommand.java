@@ -64,7 +64,7 @@ public class TCRhotCommand {
     public void executeLinuxCommands() throws IOException, InterruptedException {
         // 执行 Linux 下的命令
         // 例如：source activate ycp
-        Process process1 = Runtime.getRuntime().exec("source activate ycp && python /data/ycp/fx/性能测试.py");
+        Process process1 = Runtime.getRuntime().exec("/data/ycp/web/data/热图_tcr.py");
         process1.waitFor();
     }
 }

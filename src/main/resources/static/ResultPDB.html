@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ImmunoFlash Sever</title>
+
+  <link rel="stylesheet" href="/src/menu.css" />
+  <link href="/src/server.css" rel="stylesheet" type="text/css">
+  <link href="/src/main.css" rel="stylesheet" type="text/css">
+
+
+  <link rel="stylesheet" href="/src/Lbackground.css">
+  <link rel="stylesheet" href="/src/Rbackground.css">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <style>
+    .gif{
+      position: absolute;
+      left: 0.5%;
+      z-index: 1;
+      top: 35%;
+      background-color: transparent; /* 设置图像背景为透明 */
+    }
+
+
+    /*这是表格的样式*/
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+
+
+    .squares
+    {
+      position:absolute;
+    }
+
+
+    .box1 {
+      top: 35%;
+      /*float: right;*/
+      text-align: center; /* 让容器内的内容居中 */
+      color: black;
+      margin-bottom: -80px; /* 调整此值来减小图片与"footer"之间的间距 */
+    }
+  </style>
+
+
+
+</head>
+
+
+
+<body>
+
+<div class="gif">
+  <img alt="Walking Totoro"
+       src="/images/mygif.gif"
+       height="154"
+       width="340"
+  />
+</div>
+
+<!--原来的背景-->
+<canvas id="canvas"></canvas>
+
+<!--动态背景（左）-->
+<div class='squares'>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+</div>
+
+<!--动态背景（右）-->
+<div class='Rsquares'>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+</div>
+
+
+
+<div class="body_content">
+
+  <br><br/><br><br/>
+  <div id="header">
+    <h1><a class="red" href="index.html">ImmunoFlash</a></h1>
+    <ul id="menu">
+      <li><a href="index.html" title="Home">Home</a></li>
+      <li><a href="Model.html" title="Model">Model</a></li>
+      <li><a href="Server.html" title="BindPredict">BindPredict</a></li>
+      <li class="active"><a href="PDB.html" title="Docking Station">Docking Station</a></li>
+      <li><a href="Download.html" title="Download">Download</a></li>
+      <li><a href="Example.html" title="Example">Example</a></li>
+      <li><a href="Help.html" title="Help">Help</a></li>
+
+      <!--            <li><a href="/Citation.html" title="Citation">Citation</a></li>-->
+      <!--<li><a href="./tutorial" title="Tutorial">Tutorial</a></li>-->
+    </ul>
+  </div>
+
+
+
+  <br><br/><br><br/>
+
+
+  <!--有下划线-->
+  <!--    <p style="font-size: larger;">-->
+  <!--        <b>-->
+  <!--            <a href="/TCRexample" style="font-size: larger;">Download result</a>-->
+  <!--        </b>-->
+  <!--    </p>-->
+
+  <!--无下划线-->
+  <p style="font-size: larger;">
+    <b>
+      <a href="/DownloadPDB" style="font-size: larger; text-decoration: none;">Download gif</a>
+    </b>
+  </p>
+
+
+
+  <!--    <br><br/>-->
+
+<!--E:\FTP\web\tcr\PDB\PDBresult-->
+  <div class="box1">
+<!--    <img alt="Walking Totoro"-->
+<!--         src="file:///E:/FTP/web/tcr/PDB/PDBresult/mygif.gif"-->
+<!--         title="a classifier combination framework combining multiple classifiers"-->
+<!--         height="480"-->
+<!--         width="800"/>-->
+
+  </div>
+
+
+
+
+
+
+
+  <!--  <br><br/><br><br/>-->
+  <div id="footer">
+
+    <p align="center">Liu Lab:Bioinformatic Team (Liu Lab)
+      ----------------------------------------------------Contact: fangxing_@njtech.edu.cn</p>
+<!--    <p align="center"><a href="http://www.beian.miit.gov.cn/">赣ICP备20010039号</a></p>-->
+
+  </div>
+
+</div>
+
+
+
+<!--<canvas id="canvas"></canvas>-->
+<script src="/src/index.js"></script>
+
+
+
+
+<!--从某地址上上传 gif图片-->
+<script>
+  window.onload = function() {
+    var imageContainer = document.querySelector('.box1');
+
+    // 创建一个数组存放图片路径，这里仅作示例，你需要根据实际情况替换为你的图片路径(存放 Linux服务器地址)
+    var imagePaths = [
+      // '/data/ycp/web/PDB/PDBresult/my_animation.gif'
+            '/images/my_animation.gif'
+
+      // 'path_to_image/image1.jpg',
+      // 'path_to_image/image2.jpg',
+      // 'path_to_image/image3.jpg'
+      // 添加更多图片路径...
+    ];
+
+    // 遍历图片路径数组，创建并添加图片元素到容器中
+    imagePaths.forEach(function(path) {
+      var img = document.createElement('img');
+      img.src = path;
+      img.alt = 'Image'; // 图片描述，可以根据需要修改
+      //640 480
+      img.width = 640; // 设置图片宽度，单位为像素
+      img.height = 480; // 设置图片高度，单位为像素
+      // img.width = 800; // 设置图片宽度，单位为像素
+      // img.height = 480; // 设置图片高度，单位为像素
+      imageContainer.appendChild(img);
+    });
+  };
+</script>
+
+
+</body>
+</html>

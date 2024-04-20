@@ -16,6 +16,27 @@
 
   <style>
 
+    .docking-station-info {
+      background-color: #f2f2f2; /* 设置背景颜色 */
+      padding: 20px; /* 设置内边距 */
+      border-radius: 10px; /* 设置圆角 */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置阴影 */
+      display: flex; /* 使用Flexbox布局 */
+      flex-direction: column; /* 设置主轴方向为垂直方向 */
+      align-items: center; /* 在交叉轴上居中对齐 */
+      text-align: center; /* 文本居中对齐 */
+    }
+
+    .docking-station-info h2 {
+      color: #333; /* 设置标题颜色 */
+    }
+
+    .docking-station-info p {
+      color: #666; /* 设置段落文字颜色 */
+      line-height: 1.6; /* 设置行高 */
+    }
+
+
     .squares
     {
       position:absolute;
@@ -44,20 +65,12 @@
   <img alt="Walking Totoro"
        src="/images/mygif.gif"
        height="154"
-       width="340"
+       width="320"
   />
 </div>
 
 
-<!--地球仪-->
-<!--<div class = "GPS_box">-->
-<!--  <script-->
-<!--          type="text/javascript"-->
-<!--          src="//rf.revolvermaps.com/0/0/2.js?i=55iiomp3udu&amp;m=8&amp;s=130&amp;c=ff0000&amp;t=1"-->
-<!--          async="async">-->
 
-<!--  </script>-->
-<!--</div>-->
 
 
 <!--原来的背景-->
@@ -97,25 +110,33 @@
 
   <br><br/><br><br/>
   <div id="header">
-    <h1><a class="red" href="/index.html">ImmunoFlash Sever</a></h1>
+    <h1><a class="red" href="/index.html">ImmunoFlash</a></h1>
     <ul id="menu">
-      <li><a href="/index.html" title="DLpTCR Server">首页</a></li>
-      <li><a href="/Home.html" title="Home">Home</a></li>
-      <li class="active"><a href="/Server.html" title="DLpTCR Server">Web Server</a></li>
+      <li><a href="/index.html" title="Home">Home</a></li>
+      <li><a href="/Model.html" title="Model">Model</a></li>
+      <li class="active"><a href="/Server.html" title="BindPredict">BindPredict</a></li>
+      <li><a href="/PDB.html" title="Docking Station">Docking Station</a></li>
       <li><a href="/Download.html" title="Download">Download</a></li>
       <li><a href="/Example.html" title="Example">Example</a></li>
+      <li><a href="Help.html" title="Help">Help</a></li>
 
-      <li><a href="/Citation.html" title="Citation">Citation</a></li>
-      <!--<li><a href="./tutorial" title="Tutorial">Tutorial</a></li>-->
     </ul>
   </div>
 
 
 
 
-  <br><br/><br><br/>
-  <br><br/><br><br/>
+  <!--    <br><br/><br><br/>-->
+  <!--    <br><br/><br><br/>-->
+  <br><br/>
+  <div class="docking-station-info">
+    <h2>分子结合预测：预测TCR-抗原序列的结合</h2>
 
+    <p>使用ImmunoFlash探索TCR和抗原之间的结合关系。只需上传您的序列，我们的平台将迅速预测它们是否能结合。</p>
+
+  </div>
+
+  <br><br/>
 
 
 
@@ -182,10 +203,16 @@
       </div>
 
 
+<!--      <div align="center" class="col1">-->
+<!--        &lt;!&ndash;                <span><a href="#"></a></span>&ndash;&gt;-->
+<!--        <span id="submitFormButton" ><a href="#"></a></span>-->
+
+<!--      </div>-->
       <div align="center" class="col1">
         <!--                <span><a href="#"></a></span>-->
         <span id="submitFormButton" ><a href="#"></a></span>
-
+        <!--        进度条的gif图片-->
+        <img src="http://tools.iedb.org/static/images/loading.gif" id="progressImage" style="display: none;">
       </div>
 
 
@@ -195,9 +222,9 @@
   <br><br/><br><br/>
   <div id="footer" class = "beian">
 
-    <p align="center">Jiang Lab:Bioinformatic Team (<a href="http://www.jianglab.org.cn/">Jiang Lab</a>)
-      ----------------------------------------------------Contact: qhjiang@hit.edu.cn</p>
-    <p align="center"><a href="http://www.beian.miit.gov.cn/">赣ICP备20010039号</a></p>
+    <p align="center">Liu Lab:Bioinformatic Team (Liu Lab)
+      ----------------------------------------------------Contact: fangxing_@njtech.edu.cn</p>
+<!--    <p align="center"><a href="http://www.beian.miit.gov.cn/">赣ICP备20010039号</a></p>-->
 
   </div>
 
@@ -233,6 +260,12 @@
         return false; // 结束循环
       }
     });
+
+
+    // 点击按钮后显示进度条图片
+    // 显示进度条图片
+    $("#progressImage").show();
+
 
     // 如果表单验证通过，则提交表单
     if (isFormValid) {

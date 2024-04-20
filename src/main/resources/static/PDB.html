@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ImmunoFlash Sever</title>
+
+    <link rel="stylesheet" href="/src/menu.css" />
+    <link href="/src/server.css" rel="stylesheet" type="text/css">
+    <link href="/src/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="/src/Lbackground.css">
+    <link rel="stylesheet" href="/src/Rbackground.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <style>
+        .docking-station-info {
+            background-color: #f2f2f2; /* 设置背景颜色 */
+            padding: 20px; /* 设置内边距 */
+            border-radius: 10px; /* 设置圆角 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置阴影 */
+            display: flex; /* 使用Flexbox布局 */
+            flex-direction: column; /* 设置主轴方向为垂直方向 */
+            align-items: center; /* 在交叉轴上居中对齐 */
+            text-align: center; /* 文本居中对齐 */
+        }
+
+        .docking-station-info h2 {
+            color: #333; /* 设置标题颜色 */
+        }
+
+        .docking-station-info p {
+            color: #666; /* 设置段落文字颜色 */
+            line-height: 1.6; /* 设置行高 */
+        }
+
+
+
+
+
+        .squares
+        {
+            position:absolute;
+        }
+
+
+        .gif{
+            position: absolute;
+            left: 0.5%;
+            z-index: 1;
+            top: 35%;
+            background-color: transparent; /* 设置图像背景为透明 */
+        }
+
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+<div class="gif">
+    <img alt="Walking Totoro"
+         src="/images/mygif.gif"
+         height="154"
+         width="320"
+    />
+</div>
+
+
+
+<!--原来的背景-->
+<canvas id="canvas"></canvas>
+
+<!--动态背景（左）-->
+<div class='squares'>
+    <div class='square'></div>
+    <div class='square'></div>
+    <div class='square'></div>
+    <div class='square'></div>
+    <div class='square'></div>
+    <div class='square'></div>
+    <div class='square'></div>
+    <div class='square'></div>
+    <div class='square'></div>
+    <div class='square'></div>
+</div>
+
+<!--动态背景（右）-->
+<div class='Rsquares'>
+    <div class='Rsquare'></div>
+    <div class='Rsquare'></div>
+    <div class='Rsquare'></div>
+    <div class='Rsquare'></div>
+    <div class='Rsquare'></div>
+    <div class='Rsquare'></div>
+    <div class='Rsquare'></div>
+    <div class='Rsquare'></div>
+    <div class='Rsquare'></div>
+    <div class='Rsquare'></div>
+</div>
+
+
+
+<div class="body_content">
+
+    <br><br/><br><br/>
+    <div id="header">
+        <h1><a class="red" href="index.html">ImmunoFlash</a></h1>
+        <ul id="menu">
+            <li><a href="index.html" title="Home">Home</a></li>
+            <li><a href="Model.html" title="Model">Model</a></li>
+            <li><a href="Server.html" title="BindPredict">BindPredict</a></li>
+            <li class="active"><a href="PDB.html" title="Docking Station">Docking Station</a></li>
+            <li><a href="Download.html" title="Download">Download</a></li>
+            <li><a href="Example.html" title="Example">Example</a></li>
+            <li><a href="Help.html" title="Help">Help</a></li>
+
+<!--            <li><a href="/Citation.html" title="Citation">Citation</a></li>-->
+            <!--<li><a href="./tutorial" title="Tutorial">Tutorial</a></li>-->
+        </ul>
+    </div>
+
+
+<!--    <br><br/>-->
+<!--    <br><br/><br><br/>-->
+<!--    <br><br/><br><br/>-->
+    <div class="docking-station-info">
+        <h2>Docking Station: 揭开免疫交互的面纱</h2>
+        <p>借助ImmunoFlash Docking Station，将TCR与抗原的复杂相互作用转化为可视化的清晰图像。只需上传您的序列文件，我们的系统将为您提供详细的分子结合分析，助您深入理解免疫学中的关键互动。轻松上传，耐心等待，洞察分子世界。</p>
+    </div>
+    <br><br/>
+
+
+    <div id="canshu" style="width: 900px; " >
+        <!-- 下边的action属性指定表单数据提交的目标地址，由后端的注解方法来处理 -->
+        <form action="/submitForm" enctype='multipart/form-data' method='POST' >
+
+
+            <div class="col">
+
+                <h3><span class="red">Input Files(文件上传)</span></h3>
+
+                <b>
+                    <label>Upload your TCR sequence file in PDB format(.pdb):</label>
+                </b>
+                <br><br/>
+
+                <input class="file" type="file" name="file1" id="file1" accept=".pdb" required>
+                <br><br/>
+
+                <b>
+                    <label>Upload your Antigen sequence file in PDB format(.pdb):</label>
+                </b>
+                <br><br/>
+
+                <input class="file" type="file" name="file2" id="file2" accept=".pdb" required>
+<!--                <br><br/>-->
+
+
+                <div class="info1">
+                    <!--          示例文档链接-->
+                    <b>
+                        <a href="/Example.html">Example File（上传的示例文件）</a>
+<!--                        <a href="/Example.html">Output example</a>-->
+                    </b>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="col">
+                <h3><span class="red">Job Submission</span></h3>
+
+                <br><br/>
+                <b><label>&ensp;&ensp;Email(选填):</label></b>
+                <!-- 先不写required,先进行测试 -->
+                <!-- <input type = "text"  id="Email_address" name="Email_address"  size="25" placeholder= 'Please enter your email address' required> -->
+                <input type="text" id="Email_address" name="Email_address" size="25" placeholder='Please enter your email address'>
+                <br><br/>
+
+                <div class="info1">
+                    <!--          示例文档链接-->
+                    <b>
+<!--                        <a href="/Example.html">Example File（上传的示例文件）</a><br><br>-->
+                        <a href="/Example.html">Output example</a>
+                    </b>
+
+                </div>
+
+
+            </div>
+
+<!--            <div align="center" class="col1">-->
+<!--                &lt;!&ndash; <span><a href="#"></a></span> &ndash;&gt;-->
+<!--                <span id="submitFormButton" ><a href="#"></a></span>-->
+<!--            </div>-->
+            <div align="center" class="col1">
+                <!--                <span><a href="#"></a></span>-->
+                <span id="submitFormButton" ><a href="#"></a></span>
+                <!--        进度条的gif图片-->
+                <img src="http://tools.iedb.org/static/images/loading.gif" id="progressImage" style="display: none;">
+            </div>
+
+        </form>
+    </div>
+
+
+    <br><br/><br><br/>
+    <div id="footer" class = "beian">
+
+        <p align="center">Liu Lab:Bioinformatic Team (Liu Lab)
+            ----------------------------------------------------Contact: fangxing_@njtech.edu.cn</p>
+<!--        <p align="center"><a href="http://www.beian.miit.gov.cn/">赣ICP备20010039号</a></p>-->
+
+    </div>
+
+</div>
+
+
+
+<!--<canvas id="canvas"></canvas>-->
+<script src="/src/index.js"></script>
+
+
+
+<script>
+
+    // 监听按钮点击事件(邮箱可以不输入)
+    $("#submitFormButton").on("click", function () {
+
+        // 获取除了邮箱外的所有输入框
+        var inputs = $("form input[type='text']").not("#Email_address");
+        var isFormValid = true;
+
+        // 检查所有输入框是否为空
+        inputs.each(function () {
+            if (!$(this).val()) {
+                // 如果输入框为空，则将表单有效性设为false
+                isFormValid = false;
+                // 可以在此处针对具体输入框进行警告信息的设置
+                alert("Please fill in all the information completely.");
+                return false; // 结束循环
+            }
+        });
+
+        // 检查文件输入框是否选择了文件
+        var file1Obj = document.getElementById("file1").files[0];
+        var file2Obj = document.getElementById("file2").files[0];
+        if (!file1Obj || !file2Obj) {
+            // 如果文件输入框没有选择文件，则提示相关信息并终止函数执行
+            alert("Please select both files.");
+            return;
+        }
+
+
+        // 点击按钮后显示进度条图片
+        // 显示进度条图片
+        $("#progressImage").show();
+
+
+
+        // 文件上传逻辑
+        var form = new FormData();
+        form.append("file1", file1Obj);
+        form.append("file2", file2Obj);
+
+        // 使用Ajax发送文件到服务器
+        $.ajax({
+            type: "POST",
+            url: "/uploadPDB",  // 指定服务器端点（文件上传）
+            data: form,
+            processData: false,
+            contentType: false,
+            success: function () {
+                window.location.href = window.location.href;
+            },
+            error: function () {
+                // 处理错误，如果有的话
+                alert("Please upload files.");
+            }
+        });
+
+        // 如果表单验证通过，则提交表单
+        if (isFormValid) {
+            $("form").submit();
+        }
+    });
+
+
+
+
+    // 在表单提交成功后，显示邮件发送结果
+    $("form").submit(function (event) {
+        event.preventDefault(); // 阻止表单的默认提交行为
+        var formData = $(this).serialize(); // 将表单数据序列化为字符串
+
+        $.ajax({
+            type: "POST",
+            url: "/submitPDB", // 提交到后端处理邮件发送的接口
+            data: formData,
+            success: function () {
+                // 处理成功，跳转到Result.html页面
+                // 等待10秒钟后跳转到指定页面
+                setTimeout(function(){
+                    window.location.href = "/ResultPDB.html";
+                }, 10000); // 10秒钟
+            },
+            error: function () {
+                // 处理错误
+                alert("邮件发送失败，请检查邮箱是否书写正确。");
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

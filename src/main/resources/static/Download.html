@@ -176,15 +176,17 @@
 <div class="body_content">
 
   <div id="header">
-    <h1><a class="red" href="index.html">ImmunoFlash Sever</a></h1>
+    <h1><a class="red" href="index.html">ImmunoFlash</a></h1>
     <ul id="menu">
-      <li><a href="index.html" title="DLpTCR Server">首页</a></li>
-      <li ><a href="Home.html" title="Home">Home</a></li>
-      <li><a href="Server.html" title="DLpTCR Server">Web Server</a></li>
+      <li><a href="index.html" title="Home">Home</a></li>
+      <li ><a href="Model.html" title="Model">Model</a></li>
+      <li><a href="Server.html" title="BindPredict">BindPredict</a></li>
+      <li><a href="PDB.html" title="Docking Station">Docking Station</a></li>
       <li class="active"><a href="Download.html" title="Download">Download</a></li>
       <li><a href="Example.html" title="Example">Example</a></li>
+      <li><a href="Help.html" title="Help">Help</a></li>
 
-      <li><a href="Citation.html" title="Citation">Citation</a></li>
+<!--      <li><a href="Citation.html" title="Citation">Citation</a></li>-->
       <!--<li><a href="./tutorial" title="Tutorial">Tutorial</a></li>-->
     </ul>
   </div>
@@ -193,149 +195,44 @@
   <br>
   <br>
   <div class="info">
-    <h3 class="underlined" align="left">DLpTCR Server Download</h3>
+    <h3 class="underlined" align="left">ImmunoFlash Server Download</h3>
     <br>
     <tr>
       <td>
-
+<!--        <a href="/static/download/TCRA_train.csv">Download File</a>-->
         <p>
           <font size="4" face="Times New Roman, Times, serif">
             <strong>
-              &nbsp;&nbsp;&nbsp;&nbsp;To construct high-quality benchmark datasets,
-              all the TCR-pMHC pairs used in this study were mainly collected from
-              the databases VDJdb and IEDB as well as TetTCR-seq data.
+              欢迎访问ImmunoFlash数据集下载中心<br><br>
+              探索ImmunoFlash模型——我们致力于提升TCR与抗原肽结合预测精度的创新工具。在这里，您可以访问一系列细致构建的数据集，涵盖五折交叉验证的训练集和验证集、独立集、三重测试集，以及COVID测试集。这些数据集是构建和精炼ImmunoFlash模型的核心，现由我们向科研界和公众开放，以促进免疫学研究和相关领域的进步。<br>
+              <br>数据集概览：<br>
+              五折交叉验证训练集和验证集： 这些数据集经过精心分层，用于训练并验证ImmunoFlash模型，保证模型可以有效学习并预测TCR与抗原肽间的复杂相互作用。<br>
+
+              独立集： 与训练数据分隔开，用来进一步验证模型的预测力，确保其结果具有高度的准确性和泛化能力。<br>
+
+              三重测试集： 提供额外的测试数据，帮助用户评估模型在多样化条件下的表现和可靠性。<br>
+
+              COVID测试集： 针对COVID-19的特定数据集，旨在帮助理解和预测针对该疾病的免疫响应。<br>
+
+              我们鼓励科研人员、学者和免疫学爱好者下载并利用这些数据集，无论是为了推动科学研究，开发新的预测模型，还是为了教育目的。共享这些资源，我们期望激发创新思维和促进研究合作，共同推动免疫学领域的发展。<br><br>
+
+              数据集列表和描述<br>
+              1. 五折交叉验证的训练集和验证集<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;描述: 这组数据集支持五折交叉验证，确保模型的训练和验证过程更加稳健和可靠。包含成千上万的TCR-抗原肽对，这些数据被分为五个互斥的子集，每次训练过程中，四个用于训练，一个用于验证。此方法提高了模型泛化能力的评估精度。<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;下载链接:<a href="/Download1">Download File</a>
+              <br>
+              2. 独立集<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;描述: 独立于训练和验证集的数据集，用于最终评估ImmunoFlash模型的预测性能。包含多种TCR-抗原肽对，确保评估的全面性和客观性，反映模型在未见数据上的实际表现。<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;下载链接:<a href="/Download2">Download File</a>
+              <br>
+              3. 三重测试集<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;描述: 特别设计的测试集，包含三种不同类型的TCR-抗原肽对，用于深入评估模型在各种情境下的稳定性和准确性。这一测试集旨在模拟真实世界中的多样化条件，提供模型性能的全面评估。<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;下载链接:<a href="/Download3">Download File</a>
+              <br>
+              4. COVID测试集<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;描述: 针对当前全球健康挑战——COVID-19，该数据集包含与病毒相关的TCR-抗原肽对。此数据集的目的是评估模型在预测与COVID-19相关的免疫反应方面的效能，对于理解疾病机制和加速疫苗开发至关重要。<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;下载链接:<a href="/Download4">Download File</a>
             </strong>
-          </font>
-        </p>
-
-
-        <p>
-          <font size="4" face="Times New Roman, Times, serif">
-            <strong>Training Dataset :</strong><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3α:
-            <a href="/static/download/TCRA_train.csv">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3β:
-            <a href="/static/download/TCRB_train.csv">Download File</a>
-          </font>
-        </p>
-
-
-        <p>
-          <font size="4" face="Times New Roman, Times, serif">
-            <strong>Testing Dataset :</strong><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3α:
-            <a href="/static/download/TCRA_test.csv">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3β:
-            <a href="/static/download/TCRB_test.csv">Download File</a>
-          </font>
-        </p>
-
-        <p>
-          <font size="4" face="Times New Roman, Times, serif">
-            <strong>Independent Testing Dataset I (COVID-19 dataset) :</strong><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3α:
-            <a href="/static/download/TCRA_COVID-19.csv">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3β:
-            <a href="/static/download/TCRB_COVID-19.csv">Download File</a>
-          </font>
-        </p>
-
-
-        <p>
-          <font size="4" face="Times New Roman, Times, serif">
-            <strong>Independent Testing Dataset II (IEDB dataset) :</strong><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3αβ:
-            <a href="/static/download/TCRAB_IEDB.csv">Download File</a>.
-          </font>
-        </p>
-        <p>
-          <font size="4" face="Times New Roman, Times, serif">
-            <strong>Independent Testing Dataset III (using for performance comparison) :</strong><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;McPAS-shared:
-            <a href="/static/download/McPAS-shared.csv">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;McPAS-unique:
-            <a href="/static/download/McPAS-unique.csv">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;COVID-19:
-            <a href="/static/download/COVID-19.csv">Download File</a>
-          </font>
-        </p>
-        <br>
-
-        <p>
-          <font size="4" face="Times New Roman, Times, serif">
-            <strong>
-              &nbsp;&nbsp;&nbsp;&nbsp;A remainder of peptide-TCR pairs in VDJdb were filtered out during benchmark dataset
-              construction to assess the prediction ability of ensemble classifiers for TCR cross-reactivity.
-            </strong>
-          </font>
-        </p>
-
-
-        <p >
-          <font size="4" face="Times New Roman, Times, serif" >
-            <strong>Cross-reactivity Dataset :</strong><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3α:
-            <a href="/static/download/TRA_VDJdb_TCR_cross-reactivity.rar">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Peptide-CDR3β:
-            <a href="/static/download/TRB_VDJdb_TCR_cross-reactivity.rar">Download File</a>
-          </font>
-        </p>
-
-        <br>
-
-        <p>
-          <font size="4" face="Times New Roman, Times, serif" color="#a52a2a">
-            <strong>
-              Supplementary Data ：
-            </strong>
-          </font>
-        </p>
-
-
-        <p>
-          <font size="4" face="Times New Roman, Times, serif">
-            &nbsp;&nbsp;&nbsp;&nbsp;<em title="One-hot encoding approach.">Supplementary Data 1:</em>
-            <a href="/static/download/Supplementary%20Data%201.xlsx">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<em title="Original values of twenty physicochemical properties of the corresponding amino acid.">Supplementary Data 2:</em>
-            <a href="/static/download/Supplementary%20Data%202.xlsx">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<em title="The detailed architectures of the proposed models.">Supplementary Data 3:</em>
-            <a href="/static/download/Supplementary%20Data%203.xlsx">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<em title="The five-fold cross-validation results of models trained using different feature extraction methods.">Supplementary Data 4:</em>
-            <a href="/static/download/Supplementary%20Data%204.xlsx">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<em title="The testing performance of two types of ensemble deep learning models based on testing dataset and independent COVID-19 data for predicting the peptide-CDR3α(β) interaction.">Supplementary Data 5:</em>
-            <a href="/static/download/Supplementary%20Data%205.xlsx">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<em title="Comparison of the performance on different classifiers for predicting the peptide-TCR interaction.">Supplementary Data 6:</em>
-            <a href="/static/download/Supplementary%20Data%206.xlsx">Download File</a>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<em title="Predictive performance comparison between our predictor and the existing predictors on three independent testing data.">Supplementary Data 7:</em>
-            <a href="/static/download/Supplementary%20Data%207.xlsx">Download File</a>
-
-          </font>
-        </p>
-        <br>
-        <p>
-          <font size="4" face="Times New Roman, Times, serif" color="#a52a2a">
-            <strong>
-              Source Code ：
-            </strong>
-          </font>
-        </p>
-        <p >
-          <font size="4" face="Times New Roman, Times, serif" >
-            <strong>Hosted on </strong>
-            <a href="https://github.com/jiangBiolab/DLpTCR">GitHub</a>
-
           </font>
         </p>
 
@@ -350,9 +247,9 @@
 
   <div id="footer">
 
-    <p align="center">Jiang Lab:Bioinformatic Team (<a href="http://www.jianglab.org.cn/">Jiang Lab</a>)
-      ----------------------------------------------------Contact: qhjiang@hit.edu.cn</p>
-    <p align="center"><a href="http://www.beian.miit.gov.cn/">赣ICP备20010039号</a></p>
+    <p align="center">Liu Lab:Bioinformatic Team (Liu Lab)
+      ----------------------------------------------------Contact: fangxing_@njtech.edu.cn</p>
+<!--    <p align="center"><a href="http://www.beian.miit.gov.cn/">赣ICP备20010039号</a></p>-->
 
   </div>
 

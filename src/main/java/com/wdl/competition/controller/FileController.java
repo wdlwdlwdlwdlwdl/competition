@@ -32,8 +32,6 @@ public class FileController {
 
 
 
-
-
     // 将上传的文件改名为 independent.csv
     @Value("${fileName}")
     String filename;
@@ -45,9 +43,10 @@ public class FileController {
 
 
         String osName = System.getProperty("os.name");
-        if (osName.startsWith("Windows")) {
-            fileUploadRootDir = TCRfileUploadRootDirWindows;
-        }
+//        if (osName.startsWith("Windows")) {
+//            fileUploadRootDir = TCRfileUploadRootDirWindows;
+//        }
+        fileUploadRootDir = TCRfileUploadRootDirWindows;
         FileUtil.createDirectories(fileUploadRootDir);
 
 
@@ -69,7 +68,5 @@ public class FileController {
 
         return "File is uploaded successfully";
     }
-
-
 
 }

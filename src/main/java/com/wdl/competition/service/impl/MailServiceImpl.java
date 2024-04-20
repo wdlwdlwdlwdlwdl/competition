@@ -1,7 +1,9 @@
 package com.wdl.competition.service.impl;
 
+import com.wdl.competition.command.PDBCommand;
 import com.wdl.competition.command.TCRCommand;
 import com.wdl.competition.command.TCRhotCommand;
+import com.wdl.competition.command.mergePDB;
 import com.wdl.competition.service.MailService;
 import jakarta.mail.internet.MimeMessage;
 import org.slf4j.Logger;
@@ -55,6 +57,8 @@ public class MailServiceImpl implements MailService {
 
 
 
+
+    //预测结果
     @Override
     public boolean sendWithWithEnclosure(String to, String filePath,String datatype) {
 
@@ -62,6 +66,14 @@ public class MailServiceImpl implements MailService {
             TCRCommand commandExecutor=new TCRCommand();
             commandExecutor.executeShellCommands();
         }
+
+//        if(datatype.equals("PDB")){
+//            mergePDB commandPDB=new mergePDB();
+//            commandPDB.executeShellCommands();
+//
+//            PDBCommand commandExecutor=new PDBCommand();
+//            commandExecutor.executeShellCommands();
+//        }
 
         logger.info("## Ready to send mail ...");
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
@@ -94,9 +106,6 @@ public class MailServiceImpl implements MailService {
     //此函数只能发送两个附件（已舍弃）
     @Override
     public boolean sendWithWithEnclosure(String to, String filePathA, String filePathB,String datatype) {
-
-
-
 
 
 

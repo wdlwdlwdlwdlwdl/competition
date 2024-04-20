@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>ImmunoFlash Sever</title>
+  <link href="/src/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/src/Lbackground.css">
+  <link rel="stylesheet" href="/src/Rbackground.css">
+
+  <style>
+    .gif{
+      position: absolute;
+      left: 0.5%;
+      /*z-index: 1;*/
+      top: 35%;
+      background-color: transparent; /* 设置图像背景为透明 */
+    }
+
+
+    html{height: 100%}
+    body{margin: 0;
+      height: 100%;
+      background: #fff;}
+
+    canvas{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+
+    .body_content{
+      width: 900px;
+      height: 100%;
+      position: absolute;
+      background-color: white;
+      left: 35%;
+      margin-left: -200px;
+      top: 35%;
+      margin-top: -200px;
+    }
+    .box { float: left; padding: 35px 0 0; width: 650px; color: black; }
+    .info {
+      border: 1px solid #e0e0e0;
+      background: #f4f4f4;
+      padding: 20px;
+      width: 864px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      position: relative;
+      clear: both;
+    }
+    .col{
+      width: 290px;
+      padding: 5px;
+      #border: 1px solid #e0e0e0;
+      background: white;
+    }
+    /* @group info */
+
+    div.info {
+      border: 1px solid #e0e0e0;
+      background: #f4f4f4;
+      padding: 20px;
+      width: 864px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      position: relative;
+      clear: both;
+    }
+    .info .right { float: right; margin: 0 55px 0 0;}
+
+    .info .main {
+      font-weight: bold;
+      font-style: italic;
+      font-size: 120%;
+    }
+    .info a{
+      font-style: italic;
+      color: blue;
+      font-weight: bold;
+      font-size: 105%;
+      text-decoration: none;
+      font-variant: normal;
+    }
+    .info a:hover {
+      text-shadow: silver 1px 1px 1px;
+      color: blue;
+    }
+
+    .file {
+      position: relative;
+      display: inline-block;
+      background: #FFFFCC;
+      border: 1px solid #CCCCCC;
+      border-radius: 4px;
+      padding: 4px 12px;
+      overflow: hidden;
+      color: #003333;
+      text-decoration: none;
+      text-indent: 0;
+      line-height: 20px;
+    }
+    .file input {
+      position: absolute;
+      font-size: 100px;
+      right: 0;
+      top: 0;
+      opacity: 0;
+    }
+    .file:hover {
+      background: blanchedalmond;
+      color: #b3b2b2;
+      text-decoration: none;
+    }
+
+    .col1{
+      position:absolute;
+      top:550px;
+      padding: 1px 1px 1px;
+      width: 900px;
+      border-radius: 4px;
+      border: 1px solid #e0e0e0;
+      background: #e0e0e0;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+<div class="gif">
+  <img alt="Walking Totoro"
+       src="/images/mygif.gif"
+       height="154"
+       width="340"
+  />
+</div>
+
+
+<!--动态背景（左）-->
+<div class='squares'>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+  <div class='square'></div>
+</div>
+
+<!--动态背景（右）-->
+<div class='Rsquares'>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+  <div class='Rsquare'></div>
+</div>
+
+
+<div class="body_content">
+
+  <div id="header">
+    <h1><a class="red" href="index.html">ImmunoFlash</a></h1>
+    <ul id="menu">
+      <li><a href="index.html" title="Home">Home</a></li>
+      <li ><a href="Model.html" title="Model">Model</a></li>
+      <li><a href="Server.html" title="BindPredict">BindPredict</a></li>
+      <li><a href="PDB.html" title="Docking Station">Docking Station</a></li>
+      <li><a href="Download.html" title="Download">Download</a></li>
+      <li><a href="Example.html" title="Example">Example</a></li>
+      <li class="active"><a href="Help.html" title="Help">Help</a></li>
+
+
+    </ul>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  <div class="info">
+<!--    <h3 class="underlined" align="left">ImmunoFlash Server Example Download</h3>-->
+    <br>
+    <tr>
+      <td>
+
+        <p style="text-align:justify; text-justify:inter-ideograph;">
+                    <span style="font-size: large; font-family: Times New Roman, Times, serif;">
+                        <strong>
+
+
+
+                        <font size="4" face="Times New Roman, Times, serif">
+                            <a href="/HelpDocument">帮助文档</a>
+                        </font>
+                        <br><br>
+
+
+
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎使用我们的网站！接下来我将带您了解每个部分的功能以及如何使用。<br><br>
+                          1. Home<br>
+                          Home 是访问我们网站的入口<br><br>
+
+                          2. Model<br>
+                          Model 简要的介绍了我们的模型 —— ImmunoFlash<br><br>
+
+                          3. Web Server<br>
+                          Web Server 提供了预测TCR-抗原序列结合的功能。用户可以上传需要进行预测的TCR-抗原序列，网站将其传入模型端，并返回预测结果<br><br>
+
+                          4.Docking Station<br>
+                          Docking Station 用户可以上传PDB格式的TCR序列和抗原序列，网站利用ImmunoFlash Docking Station，将TCR与抗原的复杂相互作用转化为可视化的清晰图像<br><br>
+
+                          5.Download<br>
+                          Download 提供了构建和精炼ImmunoFlash模型所需的数据集，用户可随时下载<br><br>
+
+                          6.Example<br>
+                          Example 提供了预测TCR-抗原序列结合的示例文件，以及用于生成分子动画的PDB格式的TCR序列示例文件和抗原序列示例文件
+
+                        </strong>
+
+
+                    </span>
+        </p>
+
+      </td>
+    </tr>
+
+
+
+
+  </div>
+
+
+  <div id="footer">
+
+    <p align="center">Liu Lab:Bioinformatic Team (Liu Lab)
+      ----------------------------------------------------Contact: fangxing_@njtech.edu.cn</p>
+    <!--    <p align="center"><a href="http://www.beian.miit.gov.cn/">赣ICP备20010039号</a></p>-->
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<canvas id="canvas"></canvas>
+<script src="/src/index.js"></script>
+
+</body>
+</html>

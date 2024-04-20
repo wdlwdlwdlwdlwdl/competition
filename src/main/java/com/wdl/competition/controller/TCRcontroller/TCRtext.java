@@ -54,9 +54,10 @@ public class TCRtext {
 
 
         String osName = System.getProperty("os.name");
-        if (osName.startsWith("Windows")) {
-            fileUploadRootDir = TCRfileUploadRootDirWindows;
-        }
+//        if (osName.startsWith("Windows")) {
+//            fileUploadRootDir = TCRfileUploadRootDirWindows;
+//        }
+        fileUploadRootDir = TCRfileUploadRootDirWindows;
         FileUtil.createDirectories(fileUploadRootDir);
 
 

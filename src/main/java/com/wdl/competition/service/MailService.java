@@ -40,4 +40,7 @@ public interface MailService {
      * @return
      */
     public boolean ManysendWithWithEnclosure(String to,String filePath ,String folderPath, String datatype);
+
+
+
 }
