@@ -50,7 +50,19 @@
         }
 
 
+        .back-link {
+            background-color: #3498db; /* Blue background */
+            color: white; /* White text */
+            padding: 5px 18px; /* Padding with adjusted height and width */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            display: inline-block; /* Make it inline */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
 
+        .back-link:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
 
     </style>
 
@@ -144,7 +156,10 @@
 
             <div class="col">
 
-                <h3><span class="red">Input File(文件上传)</span></h3>
+                <h3><span class="red">Input File(文件上传)</span>
+                    <a href="javascript:history.go(-1);" class="back-link">返回</a>
+
+                </h3>
 
 
                 <b>

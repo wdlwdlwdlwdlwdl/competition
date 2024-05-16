@@ -50,6 +50,23 @@
       color: black;
       margin-bottom: -80px; /* 调整此值来减小图片与"footer"之间的间距 */
     }
+
+
+    .back-link {
+      background-color: #3498db; /* Blue background */
+      color: white; /* White text */
+      padding: 5px 18px; /* Padding with adjusted height and width */
+      text-decoration: none; /* Remove underline */
+      border-radius: 5px; /* Rounded corners */
+      display: inline-block; /* Make it inline */
+      transition: background-color 0.3s; /* Smooth transition */
+    }
+
+    .back-link:hover {
+      background-color: #2980b9; /* Darker blue on hover */
+    }
+
+
   </style>
 
 
@@ -136,6 +153,8 @@
   <p style="font-size: larger;">
     <b>
       <a href="/DownloadPDB" style="font-size: larger; text-decoration: none;">Download gif</a>
+      &ensp;&ensp;&ensp;&ensp;
+      <a href="javascript:history.go(-1);" class="back-link">返回</a>
     </b>
   </p>
 

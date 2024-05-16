@@ -8,48 +8,44 @@
   <link href="/src/server.css" rel="stylesheet" type="text/css">
   <link href="/src/main.css" rel="stylesheet" type="text/css">
 
-
   <link rel="stylesheet" href="/src/Lbackground.css">
   <link rel="stylesheet" href="/src/Rbackground.css">
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
 
   <style>
-
     .docking-station-info {
-      background-color: #f2f2f2; /* 设置背景颜色 */
-      padding: 20px; /* 设置内边距 */
-      border-radius: 10px; /* 设置圆角 */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置阴影 */
-      display: flex; /* 使用Flexbox布局 */
-      flex-direction: column; /* 设置主轴方向为垂直方向 */
-      align-items: center; /* 在交叉轴上居中对齐 */
-      text-align: center; /* 文本居中对齐 */
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     .docking-station-info h2 {
-      color: #333; /* 设置标题颜色 */
+      color: #333;
     }
 
     .docking-station-info p {
-      color: #666; /* 设置段落文字颜色 */
-      line-height: 1.6; /* 设置行高 */
+      color: #666;
+      line-height: 1.6;
     }
 
-
-    .squares
-    {
-      position:absolute;
+    .squares {
+      position: absolute;
     }
 
-
-    .gif{
+    .gif {
       position: absolute;
       left: 0.5%;
       z-index: 1;
       top: 35%;
-      background-color: transparent; /* 设置图像背景为透明 */
+      background-color: transparent;
     }
+
 
 
     .back-link {
@@ -67,11 +63,15 @@
     }
 
 
+
+
+
+
+
   </style>
 
 
 </head>
-
 
 
 <body>
@@ -85,13 +85,8 @@
 </div>
 
 
-
-
-
-<!--原来的背景-->
 <canvas id="canvas"></canvas>
 
-<!--动态背景（左）-->
 <div class='squares'>
   <div class='square'></div>
   <div class='square'></div>
@@ -105,7 +100,6 @@
   <div class='square'></div>
 </div>
 
-<!--动态背景（右）-->
 <div class='Rsquares'>
   <div class='Rsquare'></div>
   <div class='Rsquare'></div>
@@ -134,132 +128,80 @@
       <li><a href="/Download.html" title="Download">Download</a></li>
       <li><a href="/Example.html" title="Example">Example</a></li>
       <li><a href="Help.html" title="Help">Help</a></li>
-
     </ul>
   </div>
 
 
-
-
-  <!--    <br><br/><br><br/>-->
-  <!--    <br><br/><br><br/>-->
   <br><br/>
   <div class="docking-station-info">
     <h2>分子结合预测：预测TCR-抗原序列的结合</h2>
-
     <p>使用ImmunoFlash探索TCR和抗原之间的结合关系。只需上传您的序列，我们的平台将迅速预测它们是否能结合。</p>
-
   </div>
 
   <br><br/>
 
-
-
-
   <div id="canshu" style="width: 900px; " >
-    <!--      下边的action属性指定表单数据提交的目标地址，由后端的注解方法来处理-->
     <form action="/submitForm" enctype='multipart/form-data' method='POST' >
-
       <div class="col">
-
-        <h3><span class="red">Input File(手动输入)</span>
+        <h3><span class="red">Input File(文件上传)</span>
           <a href="javascript:history.go(-1);" class="back-link">返回</a>
+
         </h3>
 
-        <!--                <br><br/>-->
+<!--        <a href="javascript:history.go(-1);">返回上一页</a>-->
+
+<!--        &lt;!&ndash; 添加返回按钮 &ndash;&gt;-->
+<!--        <div align="center">-->
+<!--          <button class="back-button" onclick="goBack()">返回</button>-->
+<!--        </div>-->
 
 
-        <div>
-          <b><label style="display: inline-block; width: 100px;">&ensp;&ensp;CDR3:</label></b>
-          <input type="text" id="inputA" name="inputA" required>
-          <br><br/>
-        </div>
-
-        <div>
-          <b><label style="display: inline-block; width: 100px;">&ensp;&ensp;Antigen:</label></b>
-          <input type="text" id="inputB" name="inputB" required>
-          <!--                    <input type="text" id="inputB" name="inputB" placeholder= '请输入:HLA/TCR/HLA-TCR' >-->
-        </div>
-
+        <b>
+          <label>Upload your TCR sequence file in csv format(.csv):</label>
+        </b>
         <br><br/>
-
-
-
+        <input class="file" type="file" name="file" id="file" accept=".csv" required>
+        <br><br/>
         <div class="info1">
-          <!--          示例文档链接-->
           <b>
-
-            <!--            <a href="/static/examples/independent_set.csv">Example File</a>-->
             <a href="/Example.html">Example File（上传的示例文件）</a>
           </b>
           <br><br/>
         </div>
-
       </div>
-
-
-
       <div class="col">
-
         <h3><span class="red">Job Submission</span></h3>
-
-
         <br><br/>
         <b><label>&ensp;&ensp;Email(选填):</label></b>
-        <!--          先不写required,先进行测试-->
-        <!--        <input type = "text"  id="Email_address" name="Email_address"  size="25" placeholder= 'Please enter your email address' required>-->
-        <input type = "text"  id="Email_address" name="Email_address"  size="25" placeholder= 'Please enter your email address'>
+        <input type = "text"  id="Email_address" name="Email_address"  size="25" placeholder= 'Please enter your email address'  >
         <br><br/>
-
-
-<!--        <label>&ensp;&ensp;-->
-<!--          <input type="checkbox" name="checkbox"> 是否需要热图-->
-<!--        </label>-->
-
-
       </div>
-
-
-<!--      <div align="center" class="col1">-->
-<!--        &lt;!&ndash;                <span><a href="#"></a></span>&ndash;&gt;-->
-<!--        <span id="submitFormButton" ><a href="#"></a></span>-->
-
-<!--      </div>-->
       <div align="center" class="col1">
-        <!--                <span><a href="#"></a></span>-->
         <span id="submitFormButton" ><a href="#"></a></span>
-        <!--        进度条的gif图片-->
         <img src="http://tools.iedb.org/static/images/loading.gif" id="progressImage" style="display: none;">
       </div>
-
-
     </form>
   </div>
 
   <br><br/><br><br/>
   <div id="footer" class = "beian">
-
     <p align="center">Liu Lab:Bioinformatic Team (Liu Lab)
       ----------------------------------------------------Contact: fangxing_@njtech.edu.cn</p>
-<!--    <p align="center"><a href="http://www.beian.miit.gov.cn/">赣ICP备20010039号</a></p>-->
-
   </div>
-
 </div>
 
 
 
-<!--<canvas id="canvas"></canvas>-->
+<script>
+  // 返回上一页
+  function goBack() {
+    window.history.back();
+  }
+</script>
+
 <script src="/src/index.js"></script>
 
 <script>
-
-</script>
-
-
-
-<script>
-
   // 监听按钮点击事件(邮箱可以不输入)
   $("#submitFormButton").on("click", function () {
 
@@ -268,7 +210,7 @@
     var isFormValid = true;
 
     // 检查所有输入框是否为空
-    inputs.each(function() {
+    inputs.each(function () {
       if (!$(this).val()) {
         // 如果输入框为空，则将表单有效性设为false
         isFormValid = false;
@@ -278,33 +220,43 @@
       }
     });
 
+    // 检查文件输入框是否选择了文件
+    var fileObj = document.getElementById("file").files[0];
+    if (!fileObj) {
+      // 如果文件输入框没有选择文件，则提示相关信息并终止函数执行
+      alert("Please select a file.");
+      return;
+    }
 
     // 点击按钮后显示进度条图片
     // 显示进度条图片
     $("#progressImage").show();
 
+    // 文件上传逻辑
+    var form = new FormData();
+    form.append("file", fileObj);
+
+    // 使用Ajax发送文件到服务器
+    $.ajax({
+      type: "POST",
+      url: "/uploadTCR",  // 指定服务器端点（文件上传）
+      data: form,
+      processData: false,
+      contentType: false,
+      success: function () {
+        window.location.href = window.location.href;
+      },
+      error: function () {
+        // 处理错误，如果有的话
+        alert("请上传文件.");
+      }
+    });
 
     // 如果表单验证通过，则提交表单
     if (isFormValid) {
       $("form").submit();
     }
   });
-
-  //必须输入邮箱
-  // // 监听按钮点击事件
-  // $("#submitFormButton").on("click", function () {
-  //
-  //   // 检查表单的有效性
-  //   var isFormValid = $("form")[0].checkValidity();
-  //   if (!isFormValid) {
-  //     // 如果表单验证不通过，则显示提示信息
-  //     alert("Please fill in all the information completely.");
-  //     return;
-  //   }
-  //   // 如果表单验证通过，则提交表单
-  //   $("form").submit();
-  // });
-
 
   // 在表单提交成功后，显示邮件发送结果
   $("form").submit(function (event) {
@@ -313,7 +265,7 @@
 
     $.ajax({
       type: "POST",
-      url: "/submitFormTCRtext", // 提交到后端处理邮件发送的接口
+      url: "/submitFormTCRfile", // 提交到后端处理邮件发送的接口
       data: formData,
       success: function () {
         // 处理成功，跳转到Result.html页面
@@ -330,11 +282,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
